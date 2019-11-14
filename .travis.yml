@@ -24,14 +24,21 @@ services:
 
 matrix:
   include:
-  - language: generic
+  - stage: NotWindows
+    language: generic
     env:
       JAVA=8
-
+    script: echo "Hello JAVA8"
+    script: echo "hi JAVA8"
   - language: generic
     env:
       JAVA=11
+    script: echo "Hello JAVA11"
+    script: echo "hi JAVA11"
+  - stage: Windows
+    os: windows
+    language: bash
+    script: echo "Hello Windows"
+    script: echo "hi Windows"
 
-script:
-  - cd lang/java
-  - mvn clean install
+script: "echo -------"
