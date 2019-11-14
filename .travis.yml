@@ -19,6 +19,10 @@
 
 sudo: required
 
+cache:
+  directories:
+  - $HOME/.m2
+
 services:
   - docker
 
@@ -31,12 +35,14 @@ matrix:
     script: 
     - echo "Hello JAVA8"
     - echo "hi JAVA8"
+    - cd lang/java && mvn clean install
   - language: generic
     env:
       JAVA=11
     script: 
     - echo "Hello JAVA11"
     - echo "hi JAVA11"
+    - cd lang/java && mvn clean install
   - stage: Windows
     os: windows
     language: bash
