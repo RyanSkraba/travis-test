@@ -28,17 +28,17 @@ matrix:
     language: generic
     env:
       JAVA=8
-    script: echo "Hello JAVA8"
-    script: echo "hi JAVA8"
+    script: 
+    - echo "Hello JAVA8"
+    - echo "hi JAVA8"
   - language: generic
     env:
       JAVA=11
-    script: echo "Hello JAVA11"
-    script: echo "hi JAVA11"
+    script: 
+    - echo "Hello JAVA11"
+    - echo "hi JAVA11"
   - stage: Windows
     os: windows
     language: bash
-    script: echo "Hello Windows"
-    script: echo "hi Windows"
 
-script: "echo -------"
+script: "echo -------NOTHING ELSE TO SAY"
